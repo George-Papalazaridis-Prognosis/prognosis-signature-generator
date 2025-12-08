@@ -1,3 +1,11 @@
+/**
+ * Full HTML signature template used for preview and for platforms
+ * that support direct HTML paste or file upload.
+ * - Maintains strict table-based structure for email client safety
+ * - Uses CDN-hosted icons to keep payload light
+ * - Always includes legal disclaimer for compliance
+ */
+
 export function buildHtmlStandardSignature({
   name,
   title,

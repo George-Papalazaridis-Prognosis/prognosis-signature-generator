@@ -1,7 +1,24 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![GitHub Pages](https://img.shields.io/badge/demo-online-blue.svg)](https://georgepapalazaridis.github.io/email-signature-generator/)
+[![Docs](https://img.shields.io/badge/Developer-Handbook-blueviolet.svg)](./Developer-Handbook.md)
 
 # ✉️ Corporate Email Signature Generator
+
+## 📑 Table of Contents
+
+- [Corporate Email Signature Generator](#️-corporate-email-signature-generator)
+- [📚 Developer Handbook](#-developer-handbook)
+- [🧩 The Problem](#-the-problem)
+- [💡 The Solution](#-the-solution)
+- [🛠️ Tech Overview](#️-tech-overview)
+- [✨ Key Features](#-key-features)
+- [🚀 How to Use](#-how-to-use)
+- [📁 Project Structure](#-project-structure)
+- [🔧 Development Notes (for contributors)](#-development-notes-for-contributors)
+- [🧭 Design Principles](#-design-principles)
+- [🔮 Roadmap](#-roadmap)
+- [🌍 Future Evolution — The Vision](#-future-evolution--the-vision)
+- [🧾 License](#-license)
 
 A lightweight **browser-based tool** that generates **Outlook-safe HTML signatures**
 for **copy-paste installation**, ensuring consistent corporate branding across all email clients.
@@ -31,6 +48,24 @@ fork of this repository for internal branding purposes.
 
 The **original project** and its **generic roadmap** remain owned and maintained
 by the original author.
+
+---
+
+## 📚 Developer Handbook
+
+For full technical documentation, architecture breakdown, and
+implementation details, visit:
+
+➡️ [Developer Handbook](./Developer-Handbook.md)
+
+This document includes:
+
+- Detailed wizard engine & state persistence explanation
+- Folder structure and code responsibilities
+- Signature template architecture
+- Theme + i18n system
+- Deployment notes
+- Future extensibility roadmap
 
 ---
 
@@ -120,10 +155,10 @@ No browser extensions required.
 ```text
 email-signature-generator/
 │
-├── assets/
+├── assets/                            # Static assets deployed to browser
 │   ├── base64/                        # Safe-to-embed Base64 logos & icons
 │   │   ├── logo-base64.js
-│   │   ├── icons/
+│   │   ├── icons/                     # Mobile, Call, Web, Social icons
 │   │   │   ├── call.js
 │   │   │   ├── facebook.js
 │   │   │   ├── factory.js
@@ -135,53 +170,53 @@ email-signature-generator/
 │   │   ├── signature-builder.service.js
 │   │   ├── signature-html-standard.template.js
 │   │   └── signature-outlook-web-v3.template.js
-│   └── icons/                         # Raster fallback icons (if required)
-│       ├── call.png
-│       ├── facebook.png
-│       ├── factory.png
-│       ├── instagram.png
-│       ├── language.png
-│       ├── linkedin.png
-│       ├── M.png
-│       └── youtube.png
+│   ├── icons/                         # Raster fallback icons (if required)
+│   │   ├── call.png
+│   │   ├── facebook.png
+│   │   ├── factory.png
+│   │   ├── instagram.png
+│   │   ├── language.png
+│   │   ├── linkedin.png
+│   │   ├── M.png
+│   │   └── youtube.png
+│   └── css/
+│       ├── index.css                      # Production, compiled & bundled CSS output
+│       └── *.map                          # Source maps (dev only)
 │
-├── css/
-│   ├── index.css                      # Compiled & bundled CSS output
-│   └── *.map                          # Source maps (dev only)
-│
-├── js/
+├── js/                                    # Entire application logic (ES Modules)
 │   ├── config/
-│   │   └── app.config.js              # Global toggles (DEBUG, env mode, etc.)
+│   │   └── app.config.js                  # Global toggles (DEBUG, env mode, etc.)
 │   ├── services/
-│   │   └── state-storage.service.js   # Local storage save/restore/clear
+│   │   └── state-storage.service.js       # Local storage save/restore/clear
 │   ├── translations/
-│   │   ├── translations.apply.js      # Apply language to UI labels
-│   │   └── translations.data.js       # GR/EN dictionary
+│   │   ├── translations.apply.js          # Live translation bindings
+│   │   └── translations.data.js           # Language dictionary (GR/EN)
 │   ├── utils/
-│   │   ├── debug.js                   # Debug toggle + safe console logger
-│   │   ├── dom-utils.js               # Helpers for safe DOM access
-│   │   ├── loader.js                  # Loader show/hide logic
-│   │   └── phone-formatter.js         # Phone sanitization & formatting
-│   ├── wizard/                        # Modular wizard architecture
-│   │   ├── wizard.core.js
-│   │   ├── wizard.dom.js
-│   │   ├── wizard.language-theme.js
-│   │   ├── wizard.runtime.js          # UI runtime session state
-│   │   ├── wizard.state.js            # Restore wizard after refresh
-│   │   └── wizard.steps.js            # Navigation (Step 1 → 4)
-│   ├── step4-renderers.js             # Different installation guides per platform
-│   ├── dom-bindings.js                # Inputs, events & user interactions
-│   ├── notifications.js               # Toast + success popup logic
-│   └── index.js                       # App entrypoint (initialization)
+│   │   ├── debug.js                       # Debug toggle + safe console logger
+│   │   ├── dom-utils.js                   # Helpers for safe DOM access
+│   │   ├── loader.js                      # Global loader show/hide logic
+│   │   ├── phone-formatter.js             # Phone formatting rules (GR-first)
+│   │   └── phone-validator.js             # Input sanitization for phone fields
+│   ├── wizard/                            # Modular wizard architecture - multi-step flow controller & runtime
+│   │   ├── wizard.core.js                 # Step logic, preview, validation
+│   │   ├── wizard.dom.js                  # Cached DOM element lookups
+│   │   ├── wizard.language-theme.js       # Theme toggle behavior
+│   │   ├── wizard.runtime.js              # Session state model for active wizard
+│   │   ├── wizard.state.js                # Restore wizard's data + UI after refresh
+│   │   └── wizard.steps.js                # Navigation & event listeners (Step 1 → 4)
+│   ├── step4-renderers.js                 # Different UI renderer per platform on Step 4
+│   ├── dom-bindings.js                    # User event wiring (language selector)
+│   ├── notifications.js                   # Toast + success popup logic
+│   └── index.js                           # App bootstrap entrypoint (initialization)
 │
-├── scss/                              # Source SCSS (developer editing only)
-│   ├── abstracts/                     # Design tokens & mixins
+├── scss/                                  # Source SCSS (developer editing only)
+│   ├── abstracts/                         # Design tokens (colors, variables & mixins)
 │   │   ├── _colors.scss
 │   │   └── _variables.scss
-│   ├── base/                          # Base document styling
+│   ├── base/                              # Global resets + root layout
 │   │   ├── _base.scss
 │   │   └── _layout.scss
-│   ├── components/                    # Reusable UI components
+│   ├── components/                        # Reusable UI components (Buttons, form fields, popups, etc.)
 │   │   ├── _buttons.scss
 │   │   ├── _clipboard.scss
 │   │   ├── _forms.scss
@@ -190,18 +225,16 @@ email-signature-generator/
 │   │   ├── _preview.scss
 │   │   ├── _thankyou-popup.scss
 │   │   └── _toast.scss
-│   ├── helpers/
+│   ├── helpers/                       # Keyframes + utilities
 │   │   └── animations.scss            # Keyframes & transitions
-│   └── pages/                         # Page-specific UI layouts
+│   └── pages/                         # Step-specific UI structure
 │   │   ├── _step3-layout-platform.scss
 │   │   └── _step4-layout.scss
-│   │   └── animations.scss            # Keyframes & transitions
 │   └── index.css                      # Entry point importing all partials
 │
-├── index.html                         # Application shell
-├── README.md                          # Documentation
+├── index.html                         # Application UI shell
+├── README.md                          # Public documentation
 ├── LICENSE                            # MIT License
-├── package.json                       # npm config (dev tooling / bundling later)
 └── .gitignore
 ```
 

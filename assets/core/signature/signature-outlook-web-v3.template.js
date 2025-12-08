@@ -1,6 +1,3 @@
-/**
- * Outlook Web Signature (New V3 - Copy/Paste Optimized)
- */
 import { callIcon } from "../../base64/icons/call.js";
 import { mobileIcon } from "../../base64/icons/mobile.js";
 import { wwwIcon } from "../../base64/icons/www.js";
@@ -9,6 +6,14 @@ import { instagramIcon } from "../../base64/icons/instagram.js";
 import { facebookIcon } from "../../base64/icons/facebook.js";
 import { youtubeIcon } from "../../base64/icons/youtube.js";
 import { linkedInIcon } from "../../base64/icons/linkedIn.js";
+
+/**
+ * Outlook Web-safe template (V3)
+ * - All assets inline Base64
+ * - Pure table layout for email client safety
+ * - Designed to survive Outlook Web paste sanitizer
+ * - Used for: Preview → Copy → Outlook Signature Editor
+ */
 
 export function buildOutlookSignatureWebV3({
   name,
