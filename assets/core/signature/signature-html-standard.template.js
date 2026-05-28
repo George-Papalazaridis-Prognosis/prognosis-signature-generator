@@ -12,7 +12,7 @@ export function buildHtmlStandardSignature({
   address,
   phone,
   mobile,
-  logoBase64,
+  logoAndBannerBase64,
 }) {
   const mobileHTML = mobile
     ? `
@@ -81,15 +81,19 @@ export function buildHtmlStandardSignature({
                 <!-- LOGO + TAGLINE -->
                 <tr>
                     <td>
-                        <table width="100%" role="presentation" style="table-layout:fixed;">
+                        <table width="100%" role="presentation" cellpadding="0" cellspacing="0">
                             <tr>
-                                <td width="50%" align="center">
-                                    <img src="${logoBase64}" alt="ProGnosis Biotech"
-                                        style="display:block; width:200px; max-width:200px; height:auto; border:0;">
+                                <td align="center">
+                                    <img src="${logoAndBannerBase64}" alt="ProGnosis Biotech - 75 Years of Innovation"
+                                        width="500"
+                                        style="display:block; width:100%; max-width:500px; height:auto; border:0; border-radius:12px;">
                                 </td>
-                                <td width="50%" align="center"
-                                    style="font-size:16px; font-weight:400; color:#000 !important; line-height:1.35;">
-                                    Food Safety & Clinical Diagnostics
+                            </tr>
+
+                            <tr>
+                                <td align="center"
+                                    style="padding-top:12px; font-size:18px; font-weight:400; color:#000 !important; line-height:1.35;">
+                                    Food Safety &amp; Clinical Diagnostics
                                 </td>
                             </tr>
                         </table>

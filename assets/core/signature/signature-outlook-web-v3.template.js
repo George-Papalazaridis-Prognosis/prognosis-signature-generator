@@ -21,7 +21,7 @@ export function buildOutlookSignatureWebV3({
   address,
   phone,
   mobile,
-  logoBase64,
+  logoAndBannerBase64,
   formatPhoneNumber = (x) => x,
 }) {
   const safePhone = formatPhoneNumber(phone);
@@ -75,17 +75,18 @@ export function buildOutlookSignatureWebV3({
   <!-- LOGO + TAGLINE -->
   <tr>
     <td>
-      <table width="100%">
+      <table width="100%" role="presentation">
         <tr>
-          <td align="center" width="50%">
-            <a href="https://www.prognosis-biotech.com" target="_blank" rel="noopener noreferrer"
-                style="display:inline-block; text-decoration:none; border:0;">
-              <img src="${logoBase64}" width="230"
-                style="display:block; height:auto; border:0; border-radius:12px;">
-            </a>
+          <td align="center">
+            <img src="${logoAndBannerBase64}" alt="ProGnosis Biotech - 75 Years of Innovation"
+              style="display:block; width:100%; max-width:500px; height:auto; border:0; border-radius:12px;">
           </td>
-          <td align="center" width="45%" style="font-size:16px; line-height:1.4; color:#000;">
-            Food Safety & Clinical Diagnostics
+        </tr>
+
+        <tr>
+          <td align="center"
+            style="padding-top:12px; font-size:18px; font-weight:400; color:#000 !important; line-height:1.35;">
+            Food Safety &amp; Clinical Diagnostics
           </td>
         </tr>
       </table>

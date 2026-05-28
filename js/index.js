@@ -7,7 +7,7 @@ import { initWizardSteps } from "./wizard/wizard.steps.js";
 import { restoreWizardState } from "./wizard/wizard.state.js";
 
 import { loadState, saveState } from "./services/state-storage.service.js";
-import { logoBase64 } from "../assets/base64/logo-base64.js";
+import { logoAndBannerBase64 } from "../assets/base64/logo-and-banner-base64.js";
 import { setLanguage } from "./translations/translations.apply.js";
 import { debug } from "../js/utils/debug.js";
 
@@ -70,5 +70,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   debug.log("📌 App initialized");
   debug.log("🧩 Wizard fully initialized (All modules & state ready)");
-  debug.log("🖼 Logo:", logoBase64.slice(0, 30) + "...");
+  debug.log("🖼 Logo:", logoAndBannerBase64.slice(0, 30) + "...");
 });

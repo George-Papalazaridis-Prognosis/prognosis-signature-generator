@@ -5,7 +5,7 @@ import {
   SignaturePlatform,
 } from "../../assets/core/signature/signature-builder.service.js";
 import { formatPhoneNumber } from "../utils/phone-formatter.js";
-import { logoBase64 } from "../../assets/base64/logo-base64.js";
+import { logoAndBannerBase64 } from "../../assets/base64/logo-and-banner-base64.js";
 import { saveState } from "../services/state-storage.service.js";
 import { wizardRuntime } from "./wizard.runtime.js";
 
@@ -61,7 +61,7 @@ export function buildData() {
     address: dom.addressInput.value || "Farsalon 153, Larissa, 41335 - Greece",
     phone: formatPhoneNumber(rawPhone),
     mobile: formatPhoneNumber(rawMobile),
-    logoBase64,
+    logoAndBannerBase64,
   };
 }
 
