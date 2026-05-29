@@ -139,9 +139,9 @@ export function buildHtmlStandardSignature({
                             <a href="https://www.linkedin.com/company/prognosisbiotech"
                             target="_blank" rel="noopener noreferrer"
                             style="color:#000 !important; text-decoration:none;">
-                            Linked in
+                            LinkedIn
                             </a>
-                            <span style="color:#f15a24 !important; padding:0 12px;">|</span>
+                            <span style="color:#f15a24 !important;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                             <a href="https://www.youtube.com/@prognosisbiotech"
                             target="_blank" rel="noopener noreferrer"
                             style="color:#000 !important; text-decoration:none;">
