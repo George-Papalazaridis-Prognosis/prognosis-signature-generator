@@ -78,7 +78,7 @@ export function buildHtmlStandardSignature({
                     <td style="height:14px; line-height:14px; font-size:0">&nbsp;</td>
                 </tr>
 
-                <!-- LOGO + TAGLINE -->
+                <!-- LOGO / BANNER -->
                 <tr>
                     <td>
                         <table width="100%" role="presentation" cellpadding="0" cellspacing="0">
@@ -87,13 +87,6 @@ export function buildHtmlStandardSignature({
                                     <img src="${logoAndBannerBase64}" alt="ProGnosis Biotech - 75 Years of Innovation"
                                         width="500"
                                         style="display:block; width:100%; max-width:500px; height:auto; border:0; border-radius:12px;">
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td align="center"
-                                    style="padding-top:12px; font-size:18px; font-weight:400; color:#000 !important; line-height:1.35;">
-                                    Food Safety &amp; Clinical Diagnostics
                                 </td>
                             </tr>
                         </table>
@@ -110,73 +103,53 @@ export function buildHtmlStandardSignature({
                 <!-- CONTACT -->
                 <tr>
                     <td>
-                        <table width="100%" role="presentation" style="font-size:13px; color:#000 !important;">
-                            <tr>
-                                <td style="white-space:nowrap; padding-right:14px; vertical-align:middle;">
-                                    <img src="https://www.prognosis-biotech.com/apps/icons/20251008/call.png" width="13"
-                                        height="14" style="vertical-align:middle; margin-right:6px">
-                                    <a href="tel:${phone}" style="
-                                        display:inline-flex;
-                                        align-items:center;
-                                        font-size:13px;
-                                        font-weight:500;
-                                        color:#000 !important;
-                                        text-decoration:none;
-                                    ">
-                                        ${phone}
-                                    </a>
-                                </td>
-                                ${mobileHTML}
-                                <td style="white-space:nowrap; vertical-align:middle;">
-                                    <img src="https://www.prognosis-biotech.com/apps/icons/20251008/language.png"
-                                        width="14" height="14" style="vertical-align:-1px; margin-right:6px">
-                                    <a href="https://www.prognosis-biotech.com" target="_blank"
-                                        style="color:#000 !important; font-weight:600; text-decoration:none;">
-                                        www.prognosis-biotech.com
-                                    </a>
-                                </td>
-                            </tr>
+                    <table width="100%" role="presentation" cellpadding="0" cellspacing="0" style="font-size:13px; color:#000 !important;">
+                        <tr>
+                        <td align="left" valign="middle"
+                            style="font-size:16px; font-weight:400; color:#000 !important; line-height:1.35;">
+                            Food Safety &amp; Clinical Diagnostics
+                        </td>
 
-                            <!-- ADDRESS -->
-                            <tr>
-                                <td colspan="2" style="font-size:12px; padding-top:8px; vertical-align:middle;">
-                                    <img src="https://www.prognosis-biotech.com/apps/icons/20251008/factory.png"
-                                        width="15" height="15" style="vertical-align:middle; margin-right:6px">
-                                    ${address}
-                                </td>
+                        <td align="right" valign="middle"
+                            style="white-space:nowrap; font-size:16px; font-weight:700;">
+                            <span style="color:#f05a1a !important;">T</span>
+                            <a href="tel:${phone}" style="color:#000 !important; text-decoration:none; margin-left:8px;">
+                            ${phone}
+                            </a>
+                        </td>
+                        </tr>
 
-                                <!-- SOCIAL ICONS -->
-                                <td style="text-align:right; padding-top:8px;">
-                                    ${[
-                                      [
-                                        "linkedIn",
-                                        "https://www.linkedin.com/company/prognosisbiotech",
-                                      ],
-                                      [
-                                        "youtube",
-                                        "https://www.youtube.com/@prognosisbiotech",
-                                      ],
-                                      [
-                                        "facebook",
-                                        "https://www.facebook.com/prognosisbiotechGR/?locale=el_GR",
-                                      ],
-                                      [
-                                        "instagram",
-                                        "https://www.instagram.com/prognosisbiotech/",
-                                      ],
-                                    ]
-                                      .map(
-                                        ([icon, url]) => `
-                                    <a href="${url}" target="_blank" style="display:inline-block; margin-left:12px;">
-                                        <img src="https://www.prognosis-biotech.com/apps/icons/20251008/${icon}.png"
-                                            width="20" height="20" style="display:block; border:0;">
-                                    </a>
-                                    `
-                                      )
-                                      .join("")}
-                                </td>
-                            </tr>
-                        </table>
+                        <tr>
+                        <td style="height:8px; line-height:8px; font-size:0;">&nbsp;</td>
+                        <td style="height:8px; line-height:8px; font-size:0;">&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                        <td align="left" valign="middle"
+                            style="font-size:16px; font-weight:700;">
+                            <a href="https://www.prognosis-biotech.com"
+                            target="_blank" rel="noopener noreferrer"
+                            style="color:#f05a1a !important; text-decoration:none;">
+                            www.prognosis-biotech.com
+                            </a>
+                        </td>
+
+                        <td align="right" valign="middle"
+                            style="white-space:nowrap; font-size:14px; font-weight:700;">
+                            <a href="https://www.linkedin.com/company/prognosisbiotech"
+                            target="_blank" rel="noopener noreferrer"
+                            style="color:#000 !important; text-decoration:none;">
+                            Linked in
+                            </a>
+                            <span style="color:#f05a1a !important; padding:0 12px;">|</span>
+                            <a href="https://www.youtube.com/@prognosisbiotech"
+                            target="_blank" rel="noopener noreferrer"
+                            style="color:#000 !important; text-decoration:none;">
+                            YouTube
+                            </a>
+                        </td>
+                        </tr>
+                    </table>
                     </td>
                 </tr>
 
