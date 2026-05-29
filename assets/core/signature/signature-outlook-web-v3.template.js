@@ -138,14 +138,13 @@ export function buildOutlookSignatureWebV3({
 
       <!-- DISCLAIMER -->
       <tr>
-        <td style="font-size:10px; color:#7d7d7d; line-height:1.5; text-align:justify; word-spacing:1px;">
-          <strong>DISCLAIMER:</strong>
-          This email is intended solely for the recipient(s) and may contain
-            confidential information. By reading this email, you agree to treat
-            its contents as confidential. For our full email disclaimer, please
-            visit: 
+        <td style="font-size:10px; color:#7d7d7d; line-height:1.25; text-align:left;">
+          <strong style="font-weight:700; color:#666666;">DISCLAIMER:</strong>
+          This email is intended solely for the recipient(s) and may contain confidential information.
+          By reading this email, you agree to treat its contents as confidential.
+          Visit:
           <a href="https://www.prognosis-biotech.com/disclaimer"
-            style="color:#3db3f7; text-decoration:underline;">
+            style="color:#3db3f7; text-decoration:underline; font-style:italic;">
             https://www.prognosis-biotech.com/disclaimer
           </a>
         </td>

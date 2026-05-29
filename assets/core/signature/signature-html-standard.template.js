@@ -164,16 +164,17 @@ export function buildHtmlStandardSignature({
                 <tr>
                     <td style="
                         font-size:10px;
-                        color:#b4b2b2 !important;
-                        line-height:1.35;
-                        text-align:justify;
-    ">
-                        <strong style="color:#b4b2b2 !important">DISCLAIMER:</strong>
+                        color:#7d7d7d !important;
+                        line-height:1.25;
+                        text-align:left;
+                    ">
+                        <strong style="font-weight:700; color:#666666 !important;">DISCLAIMER:</strong>
                         This email is intended solely for the recipient(s) and may contain confidential information.
-                        For our full email disclaimer, please visit:
+                        By reading this email, you agree to treat its contents as confidential.
+                        Visit:
                         <a href="https://www.prognosis-biotech.com/disclaimer"
-                            style="color:#3db3f7 !important; text-decoration:underline; font-style:italic;">
-                            https://www.prognosis-biotech.com/disclaimer
+                        style="color:#3db3f7 !important; text-decoration:underline; font-style:italic;">
+                        https://www.prognosis-biotech.com/disclaimer
                         </a>
                     </td>
                 </tr>
