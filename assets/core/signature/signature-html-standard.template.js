@@ -2,7 +2,7 @@
  * Full HTML signature template used for preview and for platforms
  * that support direct HTML paste or file upload.
  * - Maintains strict table-based structure for email client safety
- * - Uses CDN-hosted icons to keep payload light
+ * - Avoids contact/social icons for improved Outlook compatibility
  * - Always includes legal disclaimer for compliance
  */
 
@@ -42,12 +42,12 @@ export function buildHtmlStandardSignature({
 ">
     <tr>
         <td>
-            <table cellpadding="0" cellspacing="0" role="presentation" width="487" style="
+            <table cellpadding="0" cellspacing="0" role="presentation" width="520" style="
                 background:#ffffff !important;
                 border-radius:12px;
                 padding:12px;
                 width:100%;
-                max-width:467px;
+                max-width:500px;
                 margin:0;
             ">
                 <!-- HEADER -->
@@ -106,30 +106,30 @@ export function buildHtmlStandardSignature({
                     <table width="100%" role="presentation" cellpadding="0" cellspacing="0" style="font-size:13px; color:#000 !important;">
                         <tr>
                         <td align="left" valign="middle"
-                            style="font-size:16px; font-weight:400; color:#000 !important; line-height:1.35;">
+                            style="font-size:18px; font-weight:400; color:#222222 !important; line-height:1.25; letter-spacing:0.1px;">
                             Food Safety &amp; Clinical Diagnostics
                         </td>
 
                         <td align="right" valign="middle"
-                            style="white-space:nowrap; font-size:16px; font-weight:700;">
-                            <span style="color:#f05a1a !important;">T</span>
-                            <a href="tel:${phone}" style="color:#000 !important; text-decoration:none; margin-left:8px;">
+                           style="white-space:nowrap; font-size:15px; font-weight:400; line-height:1.2;">
+                            <span style="color:#f15a24 !important; font-weight:800;">T</span>
+                           <a href="tel:${phone}" style="color:#222222 !important; text-decoration:none; margin-left:8px; font-weight:400;">
                             ${phone}
                             </a>
                         </td>
                         </tr>
 
                         <tr>
-                        <td style="height:8px; line-height:8px; font-size:0;">&nbsp;</td>
-                        <td style="height:8px; line-height:8px; font-size:0;">&nbsp;</td>
+                            <td style="height:4px; line-height:4px; font-size:0;">&nbsp;</td>
+                            <td style="height:4px; line-height:4px; font-size:0;">&nbsp;</td>
                         </tr>
 
                         <tr>
                         <td align="left" valign="middle"
-                            style="font-size:16px; font-weight:700;">
+                            style="font-size:17px; font-weight:700; line-height:1.2;">
                             <a href="https://www.prognosis-biotech.com"
                             target="_blank" rel="noopener noreferrer"
-                            style="color:#f05a1a !important; text-decoration:none;">
+                            style="color:#f15a24 !important; text-decoration:none;">
                             www.prognosis-biotech.com
                             </a>
                         </td>
@@ -141,7 +141,7 @@ export function buildHtmlStandardSignature({
                             style="color:#000 !important; text-decoration:none;">
                             Linked in
                             </a>
-                            <span style="color:#f05a1a !important; padding:0 12px;">|</span>
+                            <span style="color:#f15a24 !important; padding:0 12px;">|</span>
                             <a href="https://www.youtube.com/@prognosisbiotech"
                             target="_blank" rel="noopener noreferrer"
                             style="color:#000 !important; text-decoration:none;">
